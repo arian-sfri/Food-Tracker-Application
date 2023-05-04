@@ -1,7 +1,7 @@
 # Food Tracker Application
 ## Author: Arian Safari
 
-Application that tracks food and water consumption, exercise and shows information about user's consumption
+Application written with Java and JavaFX that tracks food and water consumption and exercise.
 The user can then check the statistics of their daily consumption and exercise and the program will give further
 information on how they can improve their diet (e.g. more protein intake).
 
