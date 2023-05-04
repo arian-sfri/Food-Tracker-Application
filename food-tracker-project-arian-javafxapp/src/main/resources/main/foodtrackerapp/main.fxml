@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="678.0" prefWidth="758.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.foodtrackerapp.FoodTrackerController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <MenuBar>
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+               <MenuItem mnemonicParsing="false" onAction="#loadUser" text="Load" />
+               <MenuItem mnemonicParsing="false" onAction="#saveUser" text="Save" />
+           <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#aboutApp" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <TabPane prefHeight="554.0" prefWidth="718.0" tabClosingPolicy="UNAVAILABLE">
+     <tabs>
+       <Tab text="User">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="718.0">
+                  <children>
+                     <Label layoutX="34.0" layoutY="71.0" prefHeight="18.0" prefWidth="59.0" text="Age" />
+                     <Label alignment="CENTER" layoutX="21.0" layoutY="22.0" prefHeight="27.0" prefWidth="113.0" text="Create User" textAlignment="CENTER" textFill="#9e9e9e">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="34.0" layoutY="110.0" prefHeight="18.0" prefWidth="59.0" text="Height" />
+                     <Label layoutX="34.0" layoutY="150.0" prefHeight="18.0" prefWidth="59.0" text="Weight" />
+                     <Label layoutX="34.0" layoutY="185.0" prefHeight="18.0" prefWidth="59.0" text="Gender" />
+                     <Label layoutX="34.0" layoutY="222.0" prefHeight="18.0" prefWidth="72.0" text="Activity Rate" />
+                     <TextField fx:id="userAge" layoutX="118.0" layoutY="68.0" />
+                     <TextField fx:id="userHeight" layoutX="119.0" layoutY="107.0" />
+                     <TextField fx:id="userWeight" layoutX="120.0" layoutY="147.0" />
+                     <ComboBox fx:id="userGender" layoutX="118.0" layoutY="182.0" prefWidth="150.0" />
+                     <ComboBox fx:id="userActivityRate" layoutX="120.0" layoutY="219.0" prefWidth="150.0" />
+                     <Button layoutX="106.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#createUser" prefHeight="26.0" prefWidth="159.0" text="Create User" />
+                     <Button layoutX="284.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#showActivityInfo" prefHeight="26.0" prefWidth="29.0" text="?" />
+                     <Text fx:id="activityInfo" layoutX="337.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     <Separator layoutX="510.0" orientation="VERTICAL" prefHeight="519.0" prefWidth="0.0" />
+                     <Label layoutX="534.0" layoutY="22.0" prefHeight="26.0" prefWidth="85.0" text="User Info" textFill="#0000007d">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Label>
+                     <Text fx:id="userInfoText" layoutX="529.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     <Button layoutX="560.0" layoutY="286.0" mnemonicParsing="false" onAction="#ShowInfo" prefHeight="26.0" prefWidth="120.0" text="Show Info" />
+                  </children></AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Food">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="718.0">
+                  <children>
+                     <AnchorPane layoutX="1.0" layoutY="3.0" prefHeight="543.0" prefWidth="255.0">
+                        <children>
+                           <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" text="Select Food" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Separator layoutY="400.0" prefHeight="5.0" prefWidth="254.0" />
+                           <Label layoutX="11.0" layoutY="415.0" prefHeight="26.0" prefWidth="76.0" text="Add Water" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="14.0" layoutY="455.0" prefHeight="18.0" prefWidth="37.0" text="Cups" />
+                           <TextField fx:id="cups" layoutX="64.0" layoutY="452.0" />
+                           <Button layoutX="91.0" layoutY="484.0" mnemonicParsing="false" onAction="#addWater" text="Add Water" />
+                           <Label layoutX="19.0" layoutY="86.0" text="Select food" />
+                           <Button layoutX="90.0" layoutY="199.0" mnemonicParsing="false" onAction="#inputFood" prefHeight="26.0" prefWidth="74.0" text="Add Food" />
+                           <TextField fx:id="selectFoodGrams" layoutX="55.0" layoutY="125.0" prefHeight="17.0" prefWidth="117.0" />
+                           <ComboBox fx:id="selectFoodName" layoutX="92.0" layoutY="82.0" prefWidth="150.0" />
+                           <Label layoutX="180.0" layoutY="129.0" text="grams" />
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="260.0" layoutY="2.0" prefHeight="557.0" prefWidth="248.0">
+                        <children>
+                           <Separator layoutX="-2.0" layoutY="-217.0" orientation="VERTICAL" prefHeight="761.0" prefWidth="0.0" />
+                           <Label layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" text="New Food" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="37.0" layoutY="127.0" text="Calories" />
+                           <Label layoutX="58.0" layoutY="155.0" text="Fat" />
+                           <Label layoutX="43.0" layoutY="184.0" text="Protein" />
+                           <Label layoutX="9.0" layoutY="219.0" text="Carbohydrate" />
+                           <Label layoutX="44.0" layoutY="254.0" text="Sugars" />
+                           <Label layoutX="3.0" layoutY="57.0" prefHeight="26.0" prefWidth="242.0" text="Please enter each of the following for every 100g " textFill="#00000099">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="newFoodCals" layoutX="85.0" layoutY="123.0" />
+                           <TextField fx:id="newFoodFat" layoutX="84.0" layoutY="151.0" />
+                           <TextField fx:id="newFoodProtein" layoutX="84.0" layoutY="180.0" />
+                           <TextField fx:id="newFoodCarbs" layoutX="84.0" layoutY="215.0" />
+                           <TextField fx:id="newFoodSugar" layoutX="85.0" layoutY="250.0" />
+                           <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" onAction="#addFood" prefHeight="26.0" prefWidth="74.0" text="Add Food" />
+                           <Label layoutX="46.0" layoutY="96.0" text="Name" />
+                           <TextField fx:id="newFoodName" layoutX="84.0" layoutY="92.0" />
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="508.0" prefHeight="554.0" prefWidth="210.0">
+                        <children>
+                           <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="554.0" prefWidth="6.0" />
+                           <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="46.0" text="Detail" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="20.0" layoutY="108.0" text="Select food" />
+                           <Text fx:id="foodDetailText" layoutX="39.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="106.13677978515625" />
+                           <ComboBox fx:id="foodDetailList" layoutX="94.0" layoutY="104.0" prefHeight="7.0" prefWidth="102.0" />
+                           <Button layoutX="79.0" layoutY="149.0" mnemonicParsing="false" onAction="#showFoodDetails" text="Show Details" />
+                        </children>
+                     </AnchorPane>
+                  </children></AnchorPane>
+         </content>
+       </Tab>
+         <Tab text="Exercise">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <AnchorPane prefHeight="543.0" prefWidth="255.0">
+                        <children>
+                           <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="101.0" text="Select Exercise" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="9.0" layoutY="86.0" prefHeight="18.0" prefWidth="81.0" text="Select Exercise" />
+                           <Button layoutX="72.0" layoutY="181.0" mnemonicParsing="false" onAction="#selectExercise" prefHeight="26.0" prefWidth="88.0" text="Add Exercise" />
+                           <TextField fx:id="selectExerciseHours" layoutX="55.0" layoutY="125.0" prefHeight="17.0" prefWidth="117.0" />
+                           <ComboBox fx:id="selectExerciseName" layoutX="92.0" layoutY="82.0" prefHeight="26.0" prefWidth="141.0" />
+                           <Label layoutX="180.0" layoutY="129.0" text="Hours" />
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="255.0" prefHeight="557.0" prefWidth="248.0">
+                        <children>
+                           <Separator layoutX="-2.0" layoutY="-217.0" orientation="VERTICAL" prefHeight="761.0" prefWidth="0.0" />
+                           <Label layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="90.0" text="New Exercise" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="46.0" layoutY="158.0" text="Calories" />
+                           <Label layoutX="3.0" layoutY="82.0" prefHeight="26.0" prefWidth="242.0" text="Please enter each of the following for every hour " textFill="#00000099">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="newExerciseCalories" layoutX="105.0" layoutY="153.0" prefHeight="26.0" prefWidth="106.0" />
+                           <Button layoutX="89.0" layoutY="214.0" mnemonicParsing="false" onAction="#newExercise" prefHeight="26.0" prefWidth="83.0" text="Add Exercise" />
+                           <Label layoutX="14.0" layoutY="125.0" text="Exercise name" />
+                           <TextField fx:id="newExerciseName" layoutX="105.0" layoutY="120.0" prefHeight="26.0" prefWidth="106.0" />
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="503.0" layoutY="1.0" prefHeight="554.0" prefWidth="210.0">
+                        <children>
+                           <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="554.0" prefWidth="6.0" />
+                           <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="46.0" text="Detail" textFill="#00000081">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="14.0" layoutY="108.0" prefHeight="16.0" prefWidth="77.0" text="Select Exercise" />
+                           <Text fx:id="exerciseDetailText" layoutX="39.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="106.13677978515625" />
+                           <ComboBox fx:id="selectExerciseDetail" layoutX="94.0" layoutY="104.0" prefHeight="7.0" prefWidth="102.0" />
+                           <Button layoutX="66.0" layoutY="145.0" mnemonicParsing="false" onAction="#showExerciseDetails" text="Show Details" />
+                        </children>
+                     </AnchorPane>
+                  </children></AnchorPane>
+           </content>
+         </Tab>
+         <Tab text="Health Chart">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <Label layoutX="28.0" layoutY="30.0" prefHeight="26.0" prefWidth="56.0" text="Options" textFill="#000000ad">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Label>
+                     <Separator layoutX="356.0" orientation="VERTICAL" prefHeight="545.0" prefWidth="0.0" />
+                     <Label layoutX="370.0" layoutY="30.0" prefHeight="26.0" prefWidth="55.0" text="Details" textFill="#000000ad">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Label>
+                     <Button layoutX="81.0" layoutY="102.0" mnemonicParsing="false" onAction="#chartCalories" prefHeight="26.0" prefWidth="96.0" text="Calories" />
+                     <Button layoutX="80.0" layoutY="144.0" mnemonicParsing="false" onAction="#chartFat" prefHeight="26.0" prefWidth="98.0" text="Fat" />
+                     <Button layoutX="82.0" layoutY="231.0" mnemonicParsing="false" onAction="#chartCarbohydrates" prefHeight="26.0" prefWidth="96.0" text="Carbohydrates" />
+                     <Button layoutX="83.0" layoutY="273.0" mnemonicParsing="false" onAction="#chartSugar" prefHeight="26.0" prefWidth="97.0" text="Sugar" />
+                     <Button layoutX="84.0" layoutY="315.0" mnemonicParsing="false" onAction="#chartWater" prefHeight="26.0" prefWidth="97.0" text="Water" />
+                     <Button layoutX="84.0" layoutY="360.0" mnemonicParsing="false" onAction="#chartExercise" prefHeight="26.0" prefWidth="97.0" text="Exercise" />
+                     <Button layoutX="83.0" layoutY="402.0" mnemonicParsing="false" onAction="#chartAll" prefHeight="26.0" prefWidth="97.0" text="All" />
+                     <Button layoutX="81.0" layoutY="188.0" mnemonicParsing="false" onAction="#chartProtein" prefHeight="26.0" prefWidth="97.0" text="Protein" />
+                     <Text fx:id="healthChartDetails" layoutX="407.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  </children></AnchorPane>
+           </content>
+         </Tab>
+     </tabs>
+   </TabPane>
+   <HBox prefHeight="33.0" prefWidth="718.0">
+      <children>
+         <Label fx:id="status" prefHeight="18.0" prefWidth="371.0" />
+      </children></HBox>
+</VBox>
